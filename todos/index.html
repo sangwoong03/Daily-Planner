@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>todo</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="../src/todo.js" defer></script>
+  <script src="../src/mode.js" defer></script>
+  <script src="../src/date.js" defer></script>
+  <script src="../src/clock.js" defer></script>
+
+</head>
+
+<body>
+  <div class=box>
+    <div class="clock-box"></div>
+    <div class="container-todo">
+        <!-- ooo님 오늘의 일정입니다. -->
+        <div class="dark-check">
+          <input type="checkbox" class="dark-mode"><span class="mode-text">라이트모드</span>
+        </div>
+        <h1 class="title"> 오늘 할 일 </h1>
+        <div class="todo-today"></div>
+        <form class="todo-form">
+          <input type="text" class="input-todo" placeholder="할 일을 작성하세요" autofocus>
+        </form>
+        <ul class="todo-list"></ul>  
+    </div>
+  </div>
+</body>
+</html>
