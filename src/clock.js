@@ -7,6 +7,5 @@ function clockNow() {
 
   clock.innerHTML = `<h2 class="time"> ${hours} : ${minutes} </h2>`;
 }
-
 clockNow();
 setInterval(clockNow, 60000);

@@ -13,6 +13,7 @@ btnLogin.onclick = () => {
     
     if (idLen !== 0 && pwLen !== 0) {
         alert(`${id}님 어서오세요`);
+        
     } else if (idLen === 0 && pwLen !== 0) {
         alert("아이디를 입력해주세요");
     } else if (idLen !== 0 && pwLen === 0) {
@@ -39,3 +40,4 @@ userPw.onkeydown = () => {
         btnLogin.setAttribute('disabled', 'disabled');
     }
 };
+
