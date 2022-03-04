@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title>todo</title>
+  <title> today planner </title>
 
   <link rel="stylesheet" href="style.css">
   <script src="../src/todo.js" defer></script>
@@ -20,14 +20,20 @@
     <div class="container-todo">
         <!-- ooo님 오늘의 일정입니다. -->
         <div class="dark-check">
-          <input type="checkbox" class="dark-mode"><span class="mode-text">라이트모드</span>
+          <input type="checkbox" class="dark-mode">
+          <span class="mode-text">라이트모드</span>
         </div>
-        <h1 class="title"> 오늘 할 일 </h1>
+        <h2 class="title"> 오늘 할 일 </h2>
         <div class="todo-today"></div>
+        <button class="clear-all"> 모두 삭제 </button>
         <form class="todo-form">
-          <input type="text" class="input-todo" placeholder="할 일을 작성하세요" autofocus>
+          <input type="text" 
+                 class="input-todo"
+                 placeholder="할 일을 작성하세요"
+                 autofocus> 
         </form>
-        <ul class="todo-list"></ul>  
+        <div class="todo-counter"></div>
+        <ul class="todo-list"></ul>
     </div>
   </div>
 </body>
