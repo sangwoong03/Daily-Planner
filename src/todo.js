@@ -1,15 +1,28 @@
+const clearAll = document.querySelector(".clear-all");
 const todoForm = document.querySelector(".todo-form");
 const todoInput = document.querySelector(".input-todo")
 const todoList = document.querySelector(".todo-list");
 const delBtn = document.querySelector(".del");
+const counter = document.querySelector(".todo-counter");
 
 let todos = [];
 const TODOS_LIST = "todos";
 
+// clear all data about todo things in list (ul elements) and localStorage.
 function clearTodos() {
+  console.log("clear");
   
-}
+  while ( todoList.hasChildNodes()) {
+    todoList.removeChild(todoList.firstChild);
+  }
 
+  localStorage.clear();
+  todos = [];
+
+  counterTodo();
+};
+
+// save todo things 
 function saveTodos() {
   localStorage.setItem(TODOS_LIST, JSON.stringify(todos));
 }
@@ -21,7 +34,7 @@ function handleTodos(todoValueObj) {
   delBtn.innerText = "❌";
 
   li.innerHTML = `<label>
-                   <input type="checkbox">
+                   <input class="completed" type="checkbox">
                    ${todoValueObj.text}
                   </label>`;
 
@@ -36,7 +49,6 @@ function handleTodos(todoValueObj) {
 // for writting todo things in the input box
 function submitTodos(e) {
   e.preventDefault();
-  
   const todoValue = todoInput.value;
   todoInput.value= "";
 
@@ -52,12 +64,17 @@ function submitTodos(e) {
   } else {
     alert("할 일을 입력해주세요.");
   };
+  counterTodo();
 };
 
 // delete todo things in the todo list
 function removeTodos(e) {
   const delLi = e.target.parentElement;
   delLi.remove();
+  todos = todos.filter((todo) => todo.id !== parseInt(delLi.id));
+  console.log(todos);
+  saveTodos();
+  counterTodo();
 };
 
 // if there are data in the localstorage, render the data
@@ -67,16 +84,24 @@ function loadTodoList() {
   if (savedTodos !== null) {
     const parsedTodos = JSON.parse(savedTodos);
     todos = parsedTodos;
-    parsedTodos.forEach((todoValueObj)=> {
-      handleTodos(todoValueObj.text);
+    parsedTodos.forEach((todo) => {
+      handleTodos(todo)
     });
+    counterTodo();
   };
 };
 
+function counterTodo() {
+  counter.innerText = `${todos.length}개 남았습니다.`
+  if ( todos.length === 0) {
+    counter.innerText = ""
+  }
+}
 
 // main function for this whole project
 function main() {
-  loadTodoList()
+  loadTodoList();
   todoForm.addEventListener("submit", submitTodos);
+  clearAll.addEventListener("click", clearTodos);
 }
-main()
+main();
