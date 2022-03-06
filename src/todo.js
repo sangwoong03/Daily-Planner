@@ -4,14 +4,13 @@ const todoInput = document.querySelector(".input-todo")
 const todoList = document.querySelector(".todo-list");
 const delBtn = document.querySelector(".del");
 const counter = document.querySelector(".todo-counter");
+const mobileAddTodo = document.querySelector(".mobile-submit");
 
 let todos = [];
 const TODOS_LIST = "todos";
 
 // clear all data about todo things in list (ul elements) and localStorage.
 function clearTodos() {
-  console.log("clear");
-  
   while ( todoList.hasChildNodes()) {
     todoList.removeChild(todoList.firstChild);
   }
@@ -72,7 +71,6 @@ function removeTodos(e) {
   const delLi = e.target.parentElement;
   delLi.remove();
   todos = todos.filter((todo) => todo.id !== parseInt(delLi.id));
-  console.log(todos);
   saveTodos();
   counterTodo();
 };
