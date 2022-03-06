@@ -1,0 +1,40 @@
+.box {
+  width: 90%;
+  margin: 10px auto 0 auto;
+  justify-content: flex-start;
+}
+.container-todo {
+  height: 80%;
+}
+.dark-check {
+  margin: 0;
+  right: 0;
+}
+.dark-mode {
+  width: 16px;
+  height: 16px;
+}
+.clock-box {
+  text-indent: -9999px;
+}
+.todo-form {
+  display: flex;
+  justify-content: center;
+}
+.input-todo {
+  margin: 0;
+  margin-left: 10px;
+  width: 70%;
+  height: 20px;
+}
+.mobile-submit {
+  display: block;
+  width: 10%;
+  font-size: 18px;
+  margin-left: 10px;
+  background: #08071f;
+  border: none;
+}
+.mobile-submit.light {
+  background: #eee;
+}

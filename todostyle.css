@@ -97,3 +97,27 @@ body {
   text-align: center;
   margin: 10px 0;  
 }
+
+/* light mode */
+body.light,
+.box.light {
+  background: #fff;
+  color: #546e7a;
+}
+.container-todo.light {
+  color: #546e7a;
+  background: #eee;
+  box-shadow: 0 4px 6px rgba(70, 50, 100, 0.7),
+              0 1px 3px rgba(0, 0, 0, 0.1);
+}
+.clear-all.light {
+  background: #eee;
+  color: #546e7a;
+  border: 1px solid #546e7a;
+}
+.clear-all.light:hover {
+  background: #e5e5e5;
+}
+.todo-list.light button {
+  background: #eee;
+}
