@@ -33,13 +33,21 @@ function handleTodos(todoValueObj) {
   delBtn.innerText = "❌";
 
   li.innerHTML = `<label>
-                   <input class="completed" type="checkbox">
+                   <input id="${todoValueObj.id}" class="completed" type="checkbox">
                    ${todoValueObj.text}
                   </label>`;
 
   li.id = todoValueObj.id;
   li.appendChild(delBtn);
   todoList.appendChild(li);
+  
+  document.addEventListener("change", function(e) {
+    if ((e.target && e.target.id === li.id)) {
+      e.target.checked ? 
+        li.style.textDecoration = "line-through":
+        li.style.textDecoration = "none"
+    };
+  });
   
   // // delete todo things in the todo list
   delBtn.addEventListener("click", removeTodos);
