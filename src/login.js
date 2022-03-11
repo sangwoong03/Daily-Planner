@@ -1,43 +1,55 @@
 // 로그인 코드 구현
 const userId = document.querySelector("#userid");
-const userPw = document.querySelector("#userpw");
 const btnLogin = document.querySelector(".btn-login");
 const warningMsg = document.querySelector(".warning-msg");
 
+// save the user information in the localStorage
+let userInfo = [];
+const USER_NAME = "username";
 
-// 아이디 alert창
-btnLogin.onclick = () => {
-    const id = userId.value;
-    const idLen = userId.value.length;
-    const pwLen = userPw.value.length;
-    
-    if (idLen !== 0 && pwLen !== 0) {
-        alert(`${id}님 어서오세요`);
-        
-    } else if (idLen === 0 && pwLen !== 0) {
-        alert("아이디를 입력해주세요");
-    } else if (idLen !== 0 && pwLen === 0) {
-        alert("비밀번호를 입력해주세요");
-    } else {
-        alert("아이디와 비밀번호를 입력해주세요");
-    };
+function saveUserName() {
+  localStorage.setItem(USER_NAME, JSON.stringify(userInfo));
 };
 
-// 비밀번호 경고문 창 
-// 정규식 표현으로 변경하기
-userPw.onkeydown = () => {
-    const id = userId.value;
-    const pw = userPw.value;
+function submitName(name) {
+  const submitCheck = confirm("이름을 등록하겠습니까?");
+  const date = new Date();
+  const year = date.getFullYear();
+  const month = date.getMonth();
+  const day = date.getDay();
 
-    if (id !== "" && (pw.length > 6 && pw.length < 19)) {
-        warningMsg.innerHTML = ""
-        btnLogin.removeAttribute('disabled')
-    } else if(id !=="" && (pw.length < 6 || pw.length > 19)) {   
-        warningMsg.innerHTML = "<div style='color:red; font-size: 12px'> 비밀번호는 영어, 숫자 포함 8자 ~ 20자입니다 </div>"
-        btnLogin.setAttribute('disabled', 'disabled');
-    } else if (id == "" && pw !== "") {
-        warningMsg.innerHTML = "<div style='color:red; font-size: 12px'> 아이디를 입력해주세요 </div>"
-        btnLogin.setAttribute('disabled', 'disabled');
-    }
+  const nameInfo = {
+    username: name,
+    useddate: `${year}년 ${month}월 ${day}일`,
+    id: userInfo.length + 1
+  };
+
+  if (submitCheck) {
+    userInfo.push(nameInfo);
+    saveUserName();
+    console.log(userInfo[0].username); // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2022-03-11
+  }
 };
 
+function fetchName(name) {
+  if (userInfo !== null) {
+    console.log(name);
+  } 
+};
+
+function handleLogin(e) {
+  e.preventDefault();
+  const name = userId.value;
+  userId.value = "";
+  const index = userInfo.indexOf(name)
+
+  if (!name ) {
+    alert("이름을 입력해주세요");
+  } else if (name && index === -1 ) {
+    submitName(name);
+  } else if (name && index > -1 ) {
+    fetchName(name);
+  }
+}
+
+btnLogin.addEventListener("click", handleLogin);
