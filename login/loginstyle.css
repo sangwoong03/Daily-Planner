@@ -26,31 +26,38 @@ body {
 }
 fieldset {  
   margin: 0 auto;
-  padding: 24px 20px;
+  padding: 26px 20px;
   width: 300px;
   height: 150px;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
 }
 .input-box {
   display: flex;
-  margin-bottom: 20px;
+  margin: 10px 0;
 }
 .input-box label {
   display: block;
-  width: 25%;
+  width: 30%;
 }
 .input-box input {
   border: none;
+  border-radius: 5px;
   border-bottom: 2px solid #d6d6d6;
   flex: 1;
-}
-#warningMsg {
   height: 20px;
+}
+.warning-msg {
+  height: 20px;
+  font-size: 12px;
+  text-align: center;
+  color: red;
 }
 .btn-login {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 40px;
   border: none;
   border-radius: 5px;
   background:#8e15eb;
@@ -61,9 +68,15 @@ fieldset {
 .btn-login:disabled {
   background:  #d6d6d6;
 }
-
+.btn-login > a {
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  padding: 10px;
+}
 .weather-box{
   display: flex;
+  justify-content: center;
 }
 .weather-box p:not(last-child) {
   margin-right: 10px;
