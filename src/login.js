@@ -13,6 +13,7 @@ function saveUserName() {
 
 function submitName(name) {
   const submitCheck = confirm("이름을 등록하겠습니까?");
+  
   const date = new Date();
   const year = date.getFullYear();
   const month = date.getMonth();
@@ -27,28 +28,27 @@ function submitName(name) {
   if (submitCheck) {
     userInfo.push(nameInfo);
     saveUserName();
-    console.log(userInfo[0].username); // @@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@2022-03-11
-  }
+  };
 };
 
-function fetchName(name) {
-  if (userInfo !== null) {
-    console.log(name);
-  } 
-};
+function changeMainPage() {
+  location.href = "todo/todo.html";
+}
 
 function handleLogin(e) {
   e.preventDefault();
   const name = userId.value;
   userId.value = "";
-  const index = userInfo.indexOf(name)
+  const savedInfo = localStorage.getItem(USER_NAME);
+  const index = savedInfo.indexOf(name);
 
   if (!name ) {
     alert("이름을 입력해주세요");
   } else if (name && index === -1 ) {
     submitName(name);
   } else if (name && index > -1 ) {
-    fetchName(name);
+    alert(`${name}님 환영합니다!!`);
+    changeMainPage();
   }
 }
 
