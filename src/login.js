@@ -11,8 +11,9 @@ function saveUserName() {
   localStorage.setItem(USER_NAME, JSON.stringify(userInfo));
 };
 
+//submit the user's information to localStorage
 function submitName(name) {
-  const submitCheck = confirm("이름을 등록하겠습니까?");
+  const submitCheck = confirm(`${name}님! 이름을 등록하겠습니까?`);
   
   const date = new Date();
   const year = date.getFullYear();
@@ -31,25 +32,33 @@ function submitName(name) {
   };
 };
 
+// if the user's information is in the localStorage, locate to todo-list page
 function changeMainPage() {
-  location.href = "todo/todo.html";
-}
+  location.href = "../todo/todo.html";
+};
 
+// handle login with lofin button
 function handleLogin(e) {
   e.preventDefault();
   const name = userId.value;
   userId.value = "";
-  const savedInfo = localStorage.getItem(USER_NAME);
-  const index = savedInfo.indexOf(name);
+
+  const savedInfos = localStorage.getItem(USER_NAME);
+  const parsedInfos = JSON.parse(savedInfos);
+  userInfo = parsedInfos;
+  const newUserInfo = userInfo.map(a => a.username)
+  const index = newUserInfo.indexOf(name);
 
   if (!name ) {
     alert("이름을 입력해주세요");
-  } else if (name && index === -1 ) {
+  } else if ((name && parsedInfos === null)) {
     submitName(name);
-  } else if (name && index > -1 ) {
-    alert(`${name}님 환영합니다!!`);
+  } else if ((name && parsedInfos !== null) && (index === -1)) {
+    submitName(name);
+  } else if ((name && parsedInfos !== null) && (index !== -1)) {
+    alert(`${name}님 환영합니다!!!`);
     changeMainPage();
-  }
-}
+  };
+};
 
 btnLogin.addEventListener("click", handleLogin);
