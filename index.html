@@ -11,27 +11,36 @@
     <script src="src/login.js" defer></script>
     <script src="src/clock.js" defer></script>
     <!-- <script src="../src/weather.js" defer></script> -->
+
+    <link rel="shortcut icon" href="#" type="image/x-icon">
+    <link rel="icon" href="#" type="image/x-icon">
+    <link rel="apple-touch-icon-precomposed" href="#">
 </head>
 
 <body>
     <div class="container">
         <div class="clock-box"></div>
-        <div class="mobile-title" hidden> LOGIN </div>
+        <div class="subtitle" hidden> Welcome! </div>
 
         <form>
             <fieldset>
                 <div class="input-box id-box">
-                    <label for="userid"> 사용자 이름 </label>
-                    <input type="text" id="userid" autofocus placeholder="이름을 입력하세요">
+                    <label for="userid"> 아이디 </label>
+                    <input type="text" id="userid" placeholder="Your Name">
                 </div>
-                <!-- <div class="input-box pw-box">
+                <div class="input-box pw-box">
                     <label for="userpw"> 비밀번호 </label>
-                    <input type="password" id="userpw">
-                </div> -->
+                    <input type="password" id="userpw" placeholder="Password">
+                </div>
         
-                <div class="warning-msg"></div>
                 <!-- <div class="weather-box"></div> -->
-                <button class="btn-login" type="submit"> 로그인 </button>
+                <button class="btn-login" type="submit"> Login </button>
+                <div class="additional-function">
+                    <ul>
+                        <li class="sign-in"> Sign In </li>
+                        <li class="reset"> Reset-All </li>
+                    </ul>
+                </div>
             </fieldset>
         </form>
     </div>

@@ -1,14 +1,13 @@
 body {
-  background:  #08070d;
-  color: #fff;
+  color: #546e7a;
 }
 .container {
-  background:#08071f;
   margin: 0 auto;
   width: 500px;
   height: 50vh;
   border-radius: 5px;
-  box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.7);
+  box-shadow: 0 4px 6px rgba(70, 50, 100, 0.7),
+              0 1px 3px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -18,17 +17,20 @@ body {
 .clock-box {
   width: 250px;
   text-align: center;
-  margin-bottom: 20px;
 }
 .clock-box .time {
   font-style: italic;
   font-size: 50px;
 }
+form {
+  width: 100%;
+}
 fieldset {  
   margin: 0 auto;
-  padding: 26px 20px;
+  padding: 26px 20px 0 20px;
   width: 300px;
   height: 150px;
+  border: none;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
@@ -40,30 +42,33 @@ fieldset {
 .input-box label {
   display: block;
   width: 30%;
+  text-align: end;
+  padding-right: 10px;
 }
 .input-box input {
   border: none;
   border-radius: 5px;
   border-bottom: 2px solid #d6d6d6;
+  border-top: 2px solid #d6d6d6;
+  border-left: 1px solid #d6d6d6;
+  border-right: 1px solid #d6d6d6;
   flex: 1;
   height: 20px;
-}
-.warning-msg {
-  height: 20px;
-  font-size: 12px;
-  text-align: center;
-  color: red;
 }
 .btn-login {
   width: 100%;
   padding: 10px;
-  margin-top: 40px;
+  margin-top: 10px;
   border: none;
   border-radius: 5px;
-  background:#8e15eb;
+  background:#546e7a;
+  color: #fff;
+  font-size: 26px;
+  font-weight: bold; 
 }
-.btn-login:enabled:hover {
+.btn-login:hover {
   cursor: pointer;
+  background: rgba(0, 0, 0, .5);
 }
 
 .weather-box{
@@ -72,4 +77,25 @@ fieldset {
 }
 .weather-box p:not(last-child) {
   margin-right: 10px;
+}
+
+.additional-function {
+  display: flex;
+}
+.additional-function ul {
+  list-style: none;
+  width: 100%;
+  display: flex;
+  text-align: center;
+  padding: 0;
+  font-size: 14px;
+}
+.additional-function ul li {
+  width: 100%;
+  padding: 5px 0;
+}
+.additional-function ul li:hover {
+  cursor: pointer;
+  text-decoration: underline;
+  color: rgba(41, 9, 9, 0.3);
 }
