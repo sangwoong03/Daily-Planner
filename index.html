@@ -5,16 +5,21 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     
-    <title> login </title>
+    <title> Daily Planner </title>
+
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/reset-css@5.0.1/reset.min.css">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" media="(max-width: 480px)" href="style-mobile.css">
-    <script src="src/login.js" defer></script>
-    <script src="src/clock.js" defer></script>
-    <!-- <script src="../src/weather.js" defer></script> -->
-
+    
+    <!-- later, change this icon link  -->
     <link rel="shortcut icon" href="#" type="image/x-icon">
     <link rel="icon" href="#" type="image/x-icon">
     <link rel="apple-touch-icon-precomposed" href="#">
+
+    <script src="src/login.js" defer></script>
+    <script src="src/clock.js" defer></script>
+    <!-- <script src="../src/weather.js" defer></script> -->
+    
 </head>
 
 <body>
@@ -22,7 +27,7 @@
         <div class="clock-box"></div>
         <div class="subtitle" hidden> Welcome! </div>
 
-        <form>
+        <form action="#">
             <fieldset>
                 <div class="input-box id-box">
                     <label for="userid"> 아이디 </label>
@@ -38,11 +43,14 @@
                 <div class="additional-function">
                     <ul>
                         <li class="sign-in"> Sign In </li>
-                        <li class="reset"> Reset-All </li>
+                        <li class="reset"> Reset All </li>
                     </ul>
                 </div>
             </fieldset>
         </form>
+    </div>
+    <div class="sign-in-modal">
+
     </div>
 </body>
 

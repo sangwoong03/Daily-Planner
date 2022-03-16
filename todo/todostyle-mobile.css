@@ -1,3 +1,4 @@
+
 .box {
   width: 90%;
   margin: 10px auto 0 auto;
@@ -28,13 +29,24 @@
   height: 20px;
 }
 .mobile-submit {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
   width: 10%;
   font-size: 18px;
   margin-left: 10px;
-  background: #08071f;
+  background-color: #08071f;
   border: none;
+}
+.submit-img {
+  filter: invert(100%);
+}
+.submit-img.light {
+  filter: none;
 }
 .mobile-submit.light {
   background: #eee;
+}
+.container-todo.light {
+  box-shadow: none;
 }

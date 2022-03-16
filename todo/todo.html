@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <title> today planner </title>
+  <title> today plans</title>
 
   <link rel="stylesheet" href="todostyle.css">
   <link rel="stylesheet" media="(max-width: 480px)" href="todostyle-mobile.css">
@@ -32,7 +32,9 @@
                  class="input-todo"
                  placeholder="할 일을 작성하세요"
                  autofocus>
-          <button type="submit" class="mobile-submit" hidden> 📝 </button> 
+          <button type="submit" class="mobile-submit" hidden>
+            <img class="submit-img" width="24px" height="24px" src="../img/submit.png" alt="submit">
+          </button> 
         </form>
         <div class="todo-counter"></div>
         <ul class="todo-list"></ul>

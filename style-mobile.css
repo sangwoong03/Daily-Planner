@@ -1,3 +1,4 @@
+@import "style.css";
 
 .container {
   margin: 100px auto 0 auto;
@@ -9,7 +10,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  transform: translateY(0%);
+  transform: none;
   box-sizing: border-box;
 }
 
@@ -17,7 +18,7 @@ form {
   width: 100%;
   margin-top: 100px;
 }
-fieldset {  
+form fieldset {  
   margin: 0 auto;
   padding: 0;
   width: 65%;
@@ -37,36 +38,31 @@ fieldset {
   margin-bottom: 20px;
 }
 
-.input-box {
+form .input-box {
   margin: 20px 0;
 }
-.input-box label {
+form .input-box label {
   display:none
 }
-.input-box input {
+form .input-box input {
   height: 30px;
   width: 100%;
-  border-bottom: 2px solid #d6d6d6;
-  border-top: none;
-  border-left: none;
-  border-right: none;
+  border: none;
+  border-bottom: 2px solid var(--border-color);
 }
-.input-box input::placeholder {
+form .input-box input::placeholder {
   text-align: center;
   font-style: italic;
   font-size: 16px;
 }
-
-.btn-login {
+form .btn-login {
   padding: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 500;
 }
-
-
-.additional-function ul {
+form .additional-function ul {
   list-style: none;
   width: 100%;
   display: flex;

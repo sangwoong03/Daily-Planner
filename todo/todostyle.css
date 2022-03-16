@@ -1,6 +1,16 @@
+:root {
+  --light-todo-color: #eee;
+  --dark-todo-color: #e6e6e6;
+  --light-background-color: #fff;
+  --dark-background-color: #08070d;
+  --dark-todoBack-color: #08071f;
+  --light-color: #546e7a;
+  --light-hover-color: #e5e5e5;
+}
+
 body {
-  background:  #08070d;
-  color: #fff;
+  background:  var(--dark-background-color);
+  color: var(--light-background-color);
 }
 .box {
   width: 350px;
@@ -16,7 +26,7 @@ body {
   text-align: center;
 }
 .container-todo {
-  background:#08071f;
+  background:var(--dark-todoBack-color);
   width: 100%;
   height: 60%;
   box-shadow: 0 0 2px 1px rgba(255, 255, 255, 0.7);
@@ -40,7 +50,7 @@ body {
 .clear-all {
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 5px;
-  color: #e5e5e5;
+  color: var(--dark-todo-color);
   margin: 0 36px 10px auto;
   padding: 5px;
   background: #08070e;
@@ -86,7 +96,7 @@ body {
   height: 16px;
 }
 .todo-list button {
-  background: #08071f;
+  background: var(--dark-todoBack-color);
   position: absolute;
   right: 10px;
   border: none;
@@ -101,22 +111,22 @@ body {
 body.light,
 .box.light {
   background: #fff;
-  color: #546e7a;
+  color: var(--light-color);
 }
 .container-todo.light {
-  color: #546e7a;
-  background: #eee;
+  color: var(--light-color);
+  background: var(--light-todo-color);
   box-shadow: 0 4px 6px rgba(70, 50, 100, 0.7),
               0 1px 3px rgba(0, 0, 0, 0.1);
 }
 .clear-all.light {
-  background: #eee;
-  color: #546e7a;
-  border: 1px solid #546e7a;
+  background: var(--light-todo-color);
+  color: var(--light-color);
+  border: 1px solid var(--light-color);
 }
 .clear-all.light:hover {
-  background: #e5e5e5;
+  background: var(--light-hover-color);
 }
 .todo-list.light button {
-  background: #eee;
+  background: var(--light-todo-color);
 }

@@ -1,9 +1,17 @@
-body {
-  color: #546e7a;
+:root {
+  --font-color: #546e7a;
+  --login-font-color: #fff;
+  --border-color: #d6d6d6;
 }
+
+body {
+  color: var(--font-color);
+  position: relative;
+}
+
 .container {
   margin: 0 auto;
-  width: 500px;
+  width: 50vh;
   height: 50vh;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(70, 50, 100, 0.7),
@@ -12,89 +20,111 @@ body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  box-sizing: border-box;
   transform: translateY(50%);
 }
+
+/* CLOCK */
 .clock-box {
   width: 250px;
   text-align: center;
+  padding-top: 10px;
+  margin-bottom: 30px
 }
 .clock-box .time {
   font-style: italic;
-  font-size: 50px;
+  font-size: 42px;
 }
+
+/* FORM */
 form {
   width: 100%;
+  box-sizing: border-box;
 }
-fieldset {  
+form fieldset {  
   margin: 0 auto;
-  padding: 26px 20px 0 20px;
-  width: 300px;
-  height: 150px;
+  padding: 26px 20px 10px 20px;
+  width: 35vh;
+  height: 17vh;
   border: none;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
 }
-.input-box {
+form .input-box {
   display: flex;
+  justify-content: center;
+  align-items: center;
   margin: 10px 0;
+  box-sizing: border-box;
 }
-.input-box label {
+form .input-box label {
   display: block;
   width: 30%;
   text-align: end;
   padding-right: 10px;
 }
-.input-box input {
+form .input-box input {
   border: none;
+  border-bottom: 2px solid var(--border-color);
+  border-top: 2px solid var(--border-color);
   border-radius: 5px;
-  border-bottom: 2px solid #d6d6d6;
-  border-top: 2px solid #d6d6d6;
-  border-left: 1px solid #d6d6d6;
-  border-right: 1px solid #d6d6d6;
   flex: 1;
   height: 20px;
 }
-.btn-login {
+form .input-box input::placeholder {
+  filter: opacity(.5) drop-shadow(0 0 0 var(--font-color));
+  padding-left: 23px;
+}
+#userid::placeholder {
+  background: url("img/id.png") no-repeat left center;
+  background-size: 18px;
+}
+#userpw::placeholder {
+  background: url("img/pw.png") no-repeat;
+  background-size: 18px;
+}
+form .btn-login {
   width: 100%;
   padding: 10px;
-  margin-top: 10px;
+  margin-top: 30px;
   border: none;
   border-radius: 5px;
-  background:#546e7a;
-  color: #fff;
+  background: var(--font-color);
+  color: var(--login-font-color);
   font-size: 26px;
   font-weight: bold; 
 }
-.btn-login:hover {
+form .btn-login:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, .5);
 }
 
-.weather-box{
+form .weather-box{
   display: flex;
   justify-content: center;
 }
-.weather-box p:not(last-child) {
+form .weather-box p:not(last-child) {
   margin-right: 10px;
 }
 
-.additional-function {
+form .additional-function {
   display: flex;
 }
-.additional-function ul {
+form .additional-function ul {
   list-style: none;
   width: 100%;
   display: flex;
   text-align: center;
   padding: 0;
+  margin-top: 10px;
   font-size: 14px;
 }
-.additional-function ul li {
+form .additional-function ul li {
   width: 100%;
   padding: 5px 0;
 }
-.additional-function ul li:hover {
+form .additional-function ul li:hover {
   cursor: pointer;
   text-decoration: underline;
   color: rgba(41, 9, 9, 0.3);
