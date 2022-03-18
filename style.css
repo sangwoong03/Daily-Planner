@@ -3,16 +3,21 @@
   --login-font-color: #fff;
   --border-color: #d6d6d6;
 }
-
+.display {
+  display: none;
+}
+html {
+  height: 100%;
+}
 body {
   color: var(--font-color);
-  position: relative;
+  height: 100%;
 }
 
 .container {
   margin: 0 auto;
-  width: 50vh;
-  height: 50vh;
+  width: 500px;
+  height: 50%;
   border-radius: 5px;
   box-shadow: 0 4px 6px rgba(70, 50, 100, 0.7),
               0 1px 3px rgba(0, 0, 0, 0.1);
@@ -23,7 +28,6 @@ body {
   box-sizing: border-box;
   transform: translateY(50%);
 }
-
 /* CLOCK */
 .clock-box {
   width: 250px;
@@ -37,42 +41,42 @@ body {
 }
 
 /* FORM */
-form {
+.login-form {
   width: 100%;
   box-sizing: border-box;
 }
-form fieldset {  
+.login-form fieldset {  
   margin: 0 auto;
   padding: 26px 20px 10px 20px;
-  width: 35vh;
-  height: 17vh;
+  width: 80%;
+  height: 100%;
   border: none;
   border-radius: 5px;
   display: flex;
   flex-direction: column;
 }
-form .input-box {
+.login-form .input-box {
   display: flex;
   justify-content: center;
   align-items: center;
   margin: 10px 0;
   box-sizing: border-box;
 }
-form .input-box label {
+.login-form .input-box label {
   display: block;
-  width: 30%;
+  width: 20%;
   text-align: end;
-  padding-right: 10px;
+  padding-right: 20px;
 }
-form .input-box input {
+.login-form .input-box input {
   border: none;
   border-bottom: 2px solid var(--border-color);
   border-top: 2px solid var(--border-color);
   border-radius: 5px;
-  flex: 1;
+  width: 60%;
   height: 20px;
 }
-form .input-box input::placeholder {
+.login-form .input-box input::placeholder {
   filter: opacity(.5) drop-shadow(0 0 0 var(--font-color));
   padding-left: 23px;
 }
@@ -84,10 +88,10 @@ form .input-box input::placeholder {
   background: url("img/pw.png") no-repeat;
   background-size: 18px;
 }
-form .btn-login {
-  width: 100%;
+.login-form .btn-login {
+  width: 80%;
   padding: 10px;
-  margin-top: 30px;
+  margin: 30px auto 0 auto;
   border: none;
   border-radius: 5px;
   background: var(--font-color);
@@ -95,23 +99,15 @@ form .btn-login {
   font-size: 26px;
   font-weight: bold; 
 }
-form .btn-login:hover {
+.login-form .btn-login:hover {
   cursor: pointer;
   background: rgba(0, 0, 0, .5);
 }
 
-form .weather-box{
-  display: flex;
-  justify-content: center;
-}
-form .weather-box p:not(last-child) {
-  margin-right: 10px;
-}
-
-form .additional-function {
+.login-form .additional-function {
   display: flex;
 }
-form .additional-function ul {
+.login-form .additional-function ul {
   list-style: none;
   width: 100%;
   display: flex;
@@ -120,12 +116,103 @@ form .additional-function ul {
   margin-top: 10px;
   font-size: 14px;
 }
-form .additional-function ul li {
+.login-form .additional-function ul li {
   width: 100%;
   padding: 5px 0;
+  
 }
-form .additional-function ul li:hover {
+.login-form .additional-function ul span {
+  padding: 10px;
+}
+.login-form .additional-function ul span:hover {
   cursor: pointer;
   text-decoration: underline;
   color: rgba(41, 9, 9, 0.3);
+}
+
+
+/* SIGN IN MODAL */
+.sign-in-wrap {
+  position: absolute;
+  top: 0;
+  background: rgba(0, 0, 0, .5);
+  width: 100%;
+  height: 100%;
+}
+.sign-in-wrap .sign-in-modal {
+  width: 400px;
+  height: 475px;
+  margin: 0 auto;
+  padding: 30px 0;
+  box-sizing: border-box;
+  transform: translateY(50%);
+  background: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  border-radius: 5px;
+}
+
+.sign-in-modal .modal-title {
+  font-size: 40px;
+  text-align: center;
+}
+
+.sign-in-modal .sign-form {
+  width: 80%;
+  margin: 50px auto 0 auto;
+  font-size: 16px;
+  box-sizing: border-box;
+}
+.sign-in-modal .sign-form div {
+  margin: 20px 0;
+}
+.sign-in-modal .sign-form div label {
+  display: inline-block;
+  width: 70px;
+  border-right: 1px solid var(--font-color);
+}
+.sign-in-modal .sign-form div input {
+  width: 50%;
+}
+.sign-in-modal .sign-form .issue-pw {
+  border: none;
+  background: rgba(84, 110, 122, .3);
+  border-radius: 5px;
+  font-size: 14px;
+}
+.sign-in-modal .sign-form .issue-pw:hover {
+  background: rgba(0, 0, 0, .2);
+  cursor: pointer;
+}
+.sign-in-modal .sign-form .description--box {
+  width: 100%;
+  margin-top: 40px;
+}
+.sign-in-modal .sign-form .description--box .description--header {
+  text-align: center;
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+.sign-in-modal .sign-form .description--box .description {
+  width: 90%;
+  line-height: 1.5em;
+  text-align: justify;
+}
+.sign-in-modal .sign-form ul {
+  height: 100%;
+  padding-top: 30px;
+  display: flex;
+  box-sizing: border-box;
+}
+.sign-in-modal .sign-form ul li {
+  width: 100%;
+  text-align: center;
+  font-size: 20px;
+}
+.sign-in-modal .sign-form ul span {
+  padding: 5px;
+}
+.sign-in-modal .sign-form ul span:hover {
+  text-decoration: underline;
+  cursor: pointer;
+  color: rgba(0, 0, 0, .4);
 }
