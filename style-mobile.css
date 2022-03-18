@@ -14,11 +14,11 @@
   box-sizing: border-box;
 }
 
-form {
+.login-form {
   width: 100%;
   margin-top: 100px;
 }
-form fieldset {  
+.login-form fieldset {  
   margin: 0 auto;
   padding: 0;
   width: 65%;
@@ -38,35 +38,56 @@ form fieldset {
   margin-bottom: 20px;
 }
 
-form .input-box {
+.login-form .input-box {
   margin: 20px 0;
 }
-form .input-box label {
+.login-form .input-box label {
   display:none
 }
-form .input-box input {
+.login-form .input-box input {
   height: 30px;
   width: 100%;
   border: none;
   border-bottom: 2px solid var(--border-color);
 }
-form .input-box input::placeholder {
+.login-form .input-box input::placeholder {
   text-align: center;
   font-style: italic;
   font-size: 16px;
 }
-form .btn-login {
+.login-form .btn-login {
   padding: 5px;
   margin-top: 20px;
   margin-bottom: 20px;
   font-size: 24px;
   font-weight: 500;
 }
-form .additional-function ul {
+.login-form .additional-function ul {
   list-style: none;
   width: 100%;
   display: flex;
   text-align: center;
   padding: 0;
   font-size: 16px;
+}
+
+.sign-in-wrap .sign-in-modal {
+  width: 90%;
+  height: 80%;
+  transform: translateY(20%);
+}
+.sign-in-modal .modal-title {
+  font-size: 30px;
+  font-weight: bold;
+}
+.sign-in-modal .sign-form {
+  width: 80%;
+  margin: 50px auto 0 auto;
+  font-size: 14px;
+}
+.sign-in-modal .sign-form div label {
+  width: 60px;
+}
+.sign-in-modal .sign-form div input {
+  width: 40%;
 }
