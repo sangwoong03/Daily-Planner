@@ -53,7 +53,6 @@ signInBtn.onclick = () => {
 }
 
 modalCheck.onclick = () => { 
-
   if ( signId.value === "" ) {
     alert("아이디를 입력해주세요");
     signId.focus();
@@ -69,6 +68,7 @@ modalCancle.onclick = () => {
     modalForm.classList.add("display");
   }
 }
+
 modalForm.onclick = (e) => {
   if (e.target.className === "sign-in-wrap") {
     modalForm.classList.add("display")
