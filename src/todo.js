@@ -15,7 +15,7 @@ function clearTodos() {
     todoList.removeChild(todoList.firstChild);
   }
 
-  localStorage.clear();
+  localStorage.removeItem(TODOS_LIST);
   todos = [];
 
   counterTodo();
@@ -72,7 +72,7 @@ function submitTodos(e) {
     alert("할 일을 입력해주세요.");
   };
   counterTodo();
-};
+}
 
 // delete todo things in the todo list
 function removeTodos(e) {
@@ -81,7 +81,7 @@ function removeTodos(e) {
   todos = todos.filter((todo) => todo.id !== parseInt(delLi.id));
   saveTodos();
   counterTodo();
-};
+}
 
 // if there are data in the localstorage, render the data
 function loadTodoList() {
@@ -95,13 +95,13 @@ function loadTodoList() {
     });
     counterTodo();
   };
-};
+}
 
 function counterTodo() {
   counter.innerText = `${todos.length}개 남았습니다.`
   if ( todos.length === 0) {
     counter.innerText = ""
-  }
+  };
 }
 
 // main function for this whole project
