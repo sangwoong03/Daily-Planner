@@ -20,10 +20,6 @@ function geoSuccess(position) {
     });
 };
 
-function createHtmlElement(data) {
-  return 
-}
-
 function geoFailure() {
   console.log("error!!");
 };
