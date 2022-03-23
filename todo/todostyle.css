@@ -12,6 +12,7 @@ body {
   background:  var(--dark-background-color);
   color: var(--light-background-color);
 }
+
 .box {
   width: 350px;
   height: 100vh;
@@ -22,9 +23,11 @@ body {
   flex-direction: column;
   position: relative;
 }
+
 .clock-box {
   text-align: center;
 }
+
 .container-todo {
   background:var(--dark-todoBack-color);
   width: 100%;
@@ -34,19 +37,23 @@ body {
   display: flex;
   flex-direction: column;
 }
+
 .dark-check {
   margin: 50px 0 0 0;
   position: absolute;
   top: 0;
 }
+
 .title {
   text-align: center;
   font-size: 22px;
 }
+
 .todo-today {
   text-align: center;
   font-size: 16px;
 }
+
 .clear-all {
   border: 1px solid rgba(255, 255, 255, 0.7);
   border-radius: 5px;
@@ -56,20 +63,25 @@ body {
   background: #08070e;
   cursor: pointer;
 }
+
 .clear-all:hover {
   background: rgba(255, 255, 255, 0.2 );
 }
+
 .todo-form {
   display: flex;
 }
+
 .input-todo {
   margin: 0 auto;
   width: 80%;
   height: 24px;
 }
+
 .input-todo::placeholder{
   text-align: center;
 }
+
 .todo-list {
   width: 80%;
   margin: 20px auto;
@@ -78,9 +90,11 @@ body {
   padding-left: 0;
   overflow: auto;
 }
+
 .todo-list::-webkit-scrollbar {
   width: 3px;
 }
+
 .todo-list::-webkit-scrollbar-thumb {
   background:rgba(255, 255, 255, 0.7);
   border-radius: 5px;
@@ -91,10 +105,12 @@ body {
   position: relative;
   padding: 8px 0;
 }
+
 .todo-list input {
   width: 16px;
   height: 16px;
 }
+
 .todo-list button {
   background: var(--dark-todoBack-color);
   position: absolute;
@@ -103,30 +119,37 @@ body {
   cursor: pointer;
   padding: 5px;
 }
+
 .todo-counter {
   text-align: center;
   margin: 10px 0;  
 }
+
+
 /* light mode */
 body.light,
 .box.light {
   background: #fff;
   color: var(--light-color);
 }
+
 .container-todo.light {
   color: var(--light-color);
   background: var(--light-todo-color);
   box-shadow: 0 4px 6px rgba(70, 50, 100, 0.7),
               0 1px 3px rgba(0, 0, 0, 0.1);
 }
+
 .clear-all.light {
   background: var(--light-todo-color);
   color: var(--light-color);
   border: 1px solid var(--light-color);
 }
+
 .clear-all.light:hover {
   background: var(--light-hover-color);
 }
+
 .todo-list.light button {
   background: var(--light-todo-color);
 }
