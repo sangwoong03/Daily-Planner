@@ -10,6 +10,7 @@ const Btn = document.querySelector(".login-btn");
 function resetUserInfo() {
   localStorage.clear();
 }
+
 function fetchUserInfo(name, pw) {
   const savedInfos = localStorage.getItem(USER_INFO);
   const parsedInfos = JSON.parse(savedInfos);
@@ -36,7 +37,7 @@ function changeMainPage(name) {
 
   alert(textAlert);
   if (alert) { location.href = "../todo/todo.html" };
-};
+}
 
 // handle login with lofin button
 function handleLogin(e) {
@@ -55,7 +56,7 @@ function handleLogin(e) {
   } else if ((name && pw && savedInfos !== null)) {
     fetchUserInfo(name, pw);
   };
-};
+}
 
 function loginMain(){
   loginForm.addEventListener("submit", handleLogin);
