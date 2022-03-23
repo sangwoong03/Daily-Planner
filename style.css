@@ -189,13 +189,14 @@ body {
 }
 .sign-in-modal .sign-form .description--box .description--header {
   text-align: center;
-  font-size: 18px;
+  font-size: 16px;
   margin-bottom: 10px;
 }
 .sign-in-modal .sign-form .description--box .description {
   width: 90%;
   line-height: 1.5em;
   text-align: justify;
+  font-size: 14px;
 }
 .sign-in-modal .sign-form ul {
   height: 100%;
