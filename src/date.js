@@ -33,6 +33,6 @@ function loadToday() {
   const todoToday = document.querySelector(".todo-today");
 
   todoToday.innerHTML = `<p class=today> ${year}년 ${month + 1}월 ${date}일 ${day}요일 </p>`
-};
+}
 
 loadToday()
